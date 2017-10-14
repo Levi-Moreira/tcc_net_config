@@ -11,4 +11,4 @@ momentum: 0.9
 weight_decay: 0.0005
 snapshot: 50
 snapshot_prefix: "/mnt/tcc_data/snapshots"
-solver_mode: CPU
+solver_mode: GPU
