@@ -1,4 +1,4 @@
-net: "/media/levi/E/tcc_caffe_exp/caffenet_train_val_1.prototxt"
+net: "/home/ubuntu/tcc_levi/tcc_net_config/caffenet_train_val_1.prototxt"
 test_iter: 50
 test_interval: 50
 base_lr: 0.005
@@ -10,5 +10,5 @@ max_iter: 1000
 momentum: 0.9
 weight_decay: 0.0005
 snapshot: 50
-snapshot_prefix: "/media/levi/E/tcc_caffe_exp/model_1_snapshot"
+snapshot_prefix: "/mnt/tcc_data/snapshots"
 solver_mode: CPU

@@ -8,7 +8,7 @@ layer {
     phase: TRAIN
   }
   data_param {
-    source: "/media/levi/E/tcc_caffe_exp/caffe/train_leveldb"
+    source: "/mnt/tcc_data/train_leveldb"
     batch_size: 128
     backend: LMDB
   }
@@ -23,7 +23,7 @@ layer {
   }
 
   data_param {
-    source: "/media/levi/E/tcc_caffe_exp/caffe/val_leveldb"
+    source: "/mnt/tcc_data/val_leveldb"
     batch_size: 50
     backend: LMDB
   }
