@@ -18,6 +18,7 @@ transform_param {
     backend: LMDB
   }
 }
+
 layer {
   name: "data"
   type: "Data"
@@ -68,7 +69,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -136,7 +137,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -209,7 +210,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -251,7 +252,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -293,7 +294,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -346,7 +347,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -395,7 +396,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
@@ -443,7 +444,7 @@ layer {
     }
     bias_filler {
       type: "constant"
-      value: 0
+      value: 0.5
     }
   }
 }
