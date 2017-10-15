@@ -1,11 +1,11 @@
 net: "/home/ubuntu/tcc_levi/tcc_net_config/caffenet_train_val_1.prototxt"
-test_iter: 2660
+test_iter: 500
 test_interval: 100
 base_lr: 0.005
 lr_policy: "step"
 gamma: 0.1
 stepsize: 30
-display: 50
+display: 100
 max_iter: 1000
 momentum: 0.9
 weight_decay: 0.0005
