@@ -7,6 +7,11 @@ layer {
   include {
     phase: TRAIN
   }
+transform_param {
+    mirror: true
+    crop_size: 227
+    mean_file: "/mnt/tcc_data/train_leveldb/mean_image.binaryproto"
+  }
   data_param {
     source: "/mnt/tcc_data/train_leveldb"
     batch_size: 128
@@ -22,7 +27,11 @@ layer {
   include {
     phase: TEST
   }
-
+transform_param {
+    mirror: true
+    crop_size: 227
+    mean_file: "/mnt/tcc_data/train_leveldb/mean_image.binaryproto"
+  }
   data_param {
     source: "/mnt/tcc_data/val_leveldb"
     batch_size: 50
