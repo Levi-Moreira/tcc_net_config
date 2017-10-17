@@ -124,37 +124,11 @@ def get_hog():
                              histogramNormType, L2HysThreshold, gammaCorrection, nlevels, signedGradient)
 
 
-def load_positive_images(fn):
-    positive_path = fn + '/pos'
-
-    positive_files = [f for f in listdir(positive_path) if isfile(join(positive_path, f))]
-
-    pos_images = numpy.empty(len(positive_files), dtype=object)
-
-    index = 0
-    total_positive_images = len(positive_files)
-    print("Positive images to load: {}".format(total_positive_images))
-    for n in range(0, len(positive_files)):
-        gc.collect()
-        positive_image_path = join(positive_path, positive_files[n])
-
-        image = cv2.imread(positive_image_path)
-        height, width, channels = image.shape
-        new_image = cv2.resize(image, (0, 0), fx=float(SZ) / width, fy=float(SZ) / height)
-
-        pos_images[n] = new_image
-        index = index + 1
-        print("Loading positive images {}%\r".format(int(index / float(total_positive_images) * 100)), end='\r')
-
-    pos_labels = np.repeat(1, len(pos_images))
-
-    return pos_images, pos_labels
-
 
 if __name__ == '__main__':
     print('Loading images  from dataset 1... ')
     # Load data.
-    dataset, labels = load_images('/media/levi/E/dataset')
+    dataset, labels = load_images('dataset')
 
     # print('Loading images  from dataset 2... ')
     # dataset2, labels2 = load_images('/home/levi/TCC/digits-classification/dataset2')
@@ -199,7 +173,7 @@ if __name__ == '__main__':
     del dataset
     # del dataset
 
-    numpy.savetxt("/media/levi/E/TCC/descriptorsfinal2.csv", hog_descriptors, delimiter=",")
+    numpy.savetxt("/mnt/TCC/descriptorsfinal2.csv", hog_descriptors, delimiter=",")
 
     cross_validation = []
     matrices = []
@@ -219,7 +193,7 @@ if __name__ == '__main__':
         model.train(hog_descriptors_train, labels_train)
 
         print('Saving SVM model ...')
-        model.save('/media/levi/E/TCC/digits_svm{}.dat'.format(index))
+        model.save('/mnt/TCC/digits_svm{}.dat'.format(index))
 
         # #
         print('Evaluating model 1... ')
@@ -228,5 +202,5 @@ if __name__ == '__main__':
         matrices.append(confusion)
 
     print("Mean accuracy for 10-cross validation: {}%".format(np.mean(cross_validation)))
-    numpy.save("/media/levi/E/TCC/matrices.dat", matrices)
-    numpy.save("/media/levi/E/TCC/cross_validation.dat", cross_validation)
+    numpy.save("/mnt/TCC/matrices.dat", matrices)
+    numpy.save("/mnt/TCC/cross_validation.dat", cross_validation)
