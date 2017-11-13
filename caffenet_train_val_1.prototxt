@@ -10,10 +10,10 @@ layer {
 transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "/mnt/tcc_data/train_leveldb/mean_image.binaryproto"
+    mean_file: "/mnt/tcc_levi/train_leveldb/mean_image.binaryproto"
   }
   data_param {
-    source: "/mnt/tcc_data/train_leveldb"
+    source: "/mnt/tcc_levi/train_leveldb"
     batch_size: 128
     backend: LMDB
   }
@@ -30,10 +30,10 @@ layer {
 transform_param {
     mirror: true
     crop_size: 227
-    mean_file: "/mnt/tcc_data/train_leveldb/mean_image.binaryproto"
+    mean_file: "/mnt/tcc_levi/train_leveldb/mean_image.binaryproto"
   }
   data_param {
-    source: "/mnt/tcc_data/val_leveldb"
+    source: "/mnt/tcc_levi/val_leveldb"
     batch_size: 50
     backend: LMDB
   }
