@@ -82,7 +82,7 @@ def softmax(X):
 
 def main():
 
-    X = cv2.imread("/media/levi/E/dataset/data/pos/image_movie01_015_0.png")
+
     W1 = np.fromfile('/media/levi/E/dataset/ResultModel/net_data/w_conv2.npy')
     b1 = np.fromfile('/media/levi/E/dataset/ResultModel/net_data/b_conv1.npy')
     print np.shape(W1)
